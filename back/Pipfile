@@ -6,6 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+gspread = "*"
+oauth2client = "*"
+flask = "*"
+flask-marshmallow = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
