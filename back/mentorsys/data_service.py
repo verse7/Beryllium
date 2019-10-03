@@ -1,15 +1,70 @@
+from mentorsys import db
+from mentorsys.models import Mentor, Mentee
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope) #ASK ROWAN FOR CREDS FILE -- not tracked in git
 
 client = gspread.authorize(creds)
 
-sheet = client.open("Test Sheet").sheet1
+#fetch data from sheet
+def fetch():
+    mentors = client.open("mocksheet").get_worksheet(1)
+    mentees = client.open("mocksheet").get_worksheet(2)
 
-data = sheet.get_all_records()
+    mentor_recs = mentors.get_all_records()
+    mentee_recs = mentees.get_all_records()
 
-pprint(data)
+    # pprint(mentor_recs)
+    # pprint(mentee_recs)
+
+    return mentor_recs, mentee_recs
+
+#fetch and add to DB
+def fetch2db():
+    mentors, mentees = fetch()
+
+    #Add Mentor Records
+    for rec in mentors:
+
+        #create Mentor record to add to DB
+        mentor = Mentor(            
+            rec['First Name'],      
+            rec['Last Name'],       
+            rec['Email Address'],   
+            str(rec['Phone Number']),    
+            rec['CONTRACT'],        
+            rec['CURRENT'],         
+            rec['MET MAX'])
+        
+        # print(mentor)
+        # print("ADDED MENTOR")
+        
+        db.session.add(mentor)
+    
+    # db.session.commit()
+    # print("DONE MENTORS")
+    
+    #ADD Mentee Records
+    for rec in mentees:
+
+        #create Mentee record to add to DB
+        mentee = Mentee(            
+            rec['First Name'],      
+            rec['Last Name'],       
+            rec['Email Address'],   
+            str(rec['Phone Number']),    
+            rec['CONTRACT'],        
+            rec['ASSIGNED'])
+
+        # print("ADDED MENTEE")
+        
+        db.session.add(mentee)
+    
+    db.session.commit()
+
+# fetch()
+fetch2db()

@@ -11,6 +11,7 @@ oauth2client = "*"
 flask = "*"
 flask-marshmallow = "*"
 flask-sqlalchemy = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"
