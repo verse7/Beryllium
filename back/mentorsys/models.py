@@ -12,6 +12,7 @@ def add_schema(cls):
     cls.Schema = Schema
     return cls
 
+
 @add_schema
 class Mentee(db.Model):
     # __tablename__ = "mentee"
@@ -29,10 +30,11 @@ class Mentee(db.Model):
         self.email = email
         self.telnum = telnum
         self.contract = contract
+        # self.mentor_id = 1
 
     def __repr__(self):
         return f"Mentee{self.id} - {self.fname} {self.lname}\n{self.email}\n" \
-               f"{self.telnum}\n{self.contract}\n{self.assigned}\n"
+               f"{self.telnum}\n{self.contract}\n{self.mentor_id}"
 
 # Mentor Model
 @add_schema
@@ -60,7 +62,7 @@ class Mentor(db.Model):
     def __repr__(self):
         return f"Mentor{self.id} - {self.fname} {self.lname}\n" \
                f"{self.email}\n{self.telnum}\n{self.contract}\n" \
-               f"{self.current}\n{self.met_max}\n"
+               f"{self.current}\n{self.met_max}\n{self.mentees}"
 
 
 # DB DESTROY AND CREATE

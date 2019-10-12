@@ -27,7 +27,7 @@ def fetch():
     mentor_recs = mentors.get_all_records()
     mentee_recs = mentees.get_all_records()
 
-    pprint(assignments_recs)
+    # pprint(assignments_recs)
     # pprint(mentor_recs)
     # pprint(mentee_recs)
 
