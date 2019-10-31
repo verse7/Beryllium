@@ -1,7 +1,7 @@
 from flask import jsonify, request
 from mentorsys import app, db
 from mentorsys.models import Mentor, Mentee
-from mentorsys.schemas import MentorSchema, MenteeSchema
+from mentorsys.schemas import *
 import mentorsys.data_service
 from pprint import pprint
 
@@ -67,6 +67,5 @@ def assign_mentee(mentee_id, mentor_id):
     mentee = Mentee.query.get(mentee_id)
     mentee.mentor_id = mentor_id
     db.session.commit()
-    pprint(mentee)
-    return MenteeSchema().jsonify(mentee)
-    return {"msg": "assignment route"}
+    return mentee_schema.jsonify(mentee)
+

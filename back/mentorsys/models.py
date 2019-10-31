@@ -1,6 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from mentorsys import db, ma
-
+""" 
 Base = db.make_declarative_base(db.Model)
 
 
@@ -11,9 +11,9 @@ def add_schema(cls):
             model = cls
     cls.Schema = Schema
     return cls
+ """
 
-
-@add_schema
+# @add_schema
 class Mentee(db.Model):
     # __tablename__ = "mentee"
     id = db.Column(db.Integer, primary_key=True)
@@ -37,7 +37,7 @@ class Mentee(db.Model):
                f"{self.telnum}\n{self.contract}\n{self.mentor_id}"
 
 # Mentor Model
-@add_schema
+# @add_schema
 class Mentor(db.Model):
     # __tablename__ = "mentor"
     id = db.Column(db.Integer, primary_key=True)

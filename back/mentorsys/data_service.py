@@ -24,7 +24,7 @@ def fetch():
     mentees = client.open("mocksheet").get_worksheet(2)
 
     assignments_recs = assignments.get_all_records()
-    mentor_recs = mentors.get_all_records()
+    mentor_recs = mentors.get_all_records() 
     mentee_recs = mentees.get_all_records()
 
     # pprint(assignments_recs)
