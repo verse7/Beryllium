@@ -1,7 +1,6 @@
 from flask import jsonify, request
 from mentorsys import app, db
-from mentorsys.models import Mentor, Mentee
-from mentorsys.schemas import *
+from mentorsys.models import Mentor, Mentee, mentee_schema, mentees_schema, mentor_schema, mentors_schema
 import mentorsys.data_service
 from pprint import pprint
 
@@ -12,23 +11,25 @@ def home():
 
 
 # Get all mentor data
-@app.route("/mentors", methods=["GET"])
+@app.route("/api/mentors", methods=["GET"])
 def get_mentors():
     mentors = Mentor.query.all()
-    # print(mentors[0])
-    return jsonify(Mentor.Schema(many=True).dump(mentors))
+    print(mentors)
+    result = mentors_schema.dump(mentors)
+    # print(result)
+    return jsonify(result)
 
 
 # Get all mentee data
-@app.route("/mentees", methods=["GET"])
+@app.route("/api/mentees", methods=["GET"])
 def get_mentees():
     mentees = Mentee.query.all()
-    # print(mentors[0])
-    return jsonify(Mentee.Schema(many=True).dump(mentees))
+    result = mentees_schema.dump(mentees)
+    return jsonify(result)
 
 
 # Add a mentor
-@app.route("/mentor", methods=["POST"])
+@app.route("/api/mentors", methods=["POST"])
 def add_mentor():
     fname = request.json["fname"]
     lname = request.json["lname"]
@@ -42,11 +43,11 @@ def add_mentor():
 
     db.session.add(new_mentor)
     db.session.commit()
-    return jsonify(Mentor.Schema().dump(new_mentor))
+    return mentor_schema.jsonify(new_mentor)
 
 
 # Add a mentee
-@app.route("/mentee", methods=["POST"])
+@app.route("/api/mentees", methods=["POST"])
 def add_mentee():
     fname = request.json["fname"]
     lname = request.json["lname"]
@@ -58,11 +59,11 @@ def add_mentee():
     # pprint(new_mentee)
     db.session.add(new_mentee)
     db.session.commit()
-    return jsonify(Mentor.Schema().dump(new_mentee))
+    return mentee_schema.jsonify(new_mentee)
 
 
 # Assign mentor to mentee
-@app.route("/assign/<mentee_id>&<mentor_id>", methods=["PUT"])
+@app.route("/api/assign/<mentee_id>&<mentor_id>", methods=["PUT"])
 def assign_mentee(mentee_id, mentor_id):
     mentee = Mentee.query.get(mentee_id)
     mentee.mentor_id = mentor_id

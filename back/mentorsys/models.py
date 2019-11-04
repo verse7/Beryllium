@@ -22,7 +22,7 @@ class Mentee(db.Model):
     email = db.Column(db.String(120), nullable=True)
     telnum = db.Column(db.String(20), nullable=True)
     contract = db.Column(db.String(10))
-    mentor_id = db.Column(db.Integer, db.ForeignKey('mentor.id'))
+    mentor_id = db.Column(db.Integer, db.ForeignKey('mentor.id'), nullable=True)
 
     def __init__(self, fname, lname, email, telnum, contract):
         self.fname = fname
@@ -47,7 +47,7 @@ class Mentor(db.Model):
     telnum = db.Column(db.String(20))
     contract = db.Column(db.String(15))
     current = db.Column(db.Integer, default=0)
-    met_max = db.Column(db.Integer, nullable=False, default=1)
+    met_max = db.Column(db.Integer, default=1)
     mentees = db.relationship('Mentee', backref='mentor')
 
     def __init__(self, fname, lname, email, telnum, contract, current, met_max):
@@ -64,6 +64,24 @@ class Mentor(db.Model):
                f"{self.email}\n{self.telnum}\n{self.contract}\n" \
                f"{self.current}\n{self.met_max}\n{self.mentees}"
 
+
+
+class MenteeSchema(ma.ModelSchema):
+    class Meta:
+        model = Mentee
+        fiels = ('id', 'fname', 'lname', 'email', 'telnum', 'contract', 'mentor_id')
+
+
+class MentorSchema(ma.ModelSchema):
+    class Meta:
+        model = Mentor
+        fiels = ('id', 'fname', 'lname', 'email', 'telnum', 'contract', 'current', 'met_max')
+
+
+mentee_schema = MenteeSchema()
+mentees_schema = MenteeSchema(many=True)
+mentor_schema = MentorSchema()
+mentors_schema = MentorSchema(many=True)
 
 # DB DESTROY AND CREATE
 db.drop_all()

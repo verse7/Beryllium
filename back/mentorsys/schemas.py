@@ -13,6 +13,6 @@ class MentorSchema(ma.ModelSchema):
 
 
 mentee_schema = MenteeSchema()
-mentee_schemas = MenteeSchema(many=True)
+mentees_schema = MenteeSchema(many=True)
 mentor_schema = MentorSchema()
-menotors_schema = MentorSchema(many=True)
+mentors_schema = MentorSchema(many=True)

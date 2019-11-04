@@ -12,6 +12,7 @@ flask = "*"
 flask-marshmallow = "*"
 flask-sqlalchemy = "*"
 pylint = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.7"

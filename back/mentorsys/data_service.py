@@ -42,6 +42,8 @@ def fetch2db():
     for rec in mentors:
 
         # create Mentor record to add to DB
+        if rec['MAX'] == "":
+            rec['MAX'] = 1
         mentor = Mentor(            
             rec['First Name'],      
             rec['Last Name'],       
