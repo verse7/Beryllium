@@ -19,26 +19,23 @@ export default {
     data() {
         return {
             acc: null,
-            panel: null
         }
     },
     methods: {
         toggleAccordian: function () {
-            console.log(this.acc);
-            this.acc.classList.toggle("active");
-
-            if (this.panel.style.display === "block") {
-                this.panel.style.display = "none";
+            console.log(this);
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
             } else {
-                this.panel.style.display = "block";
+                panel.style.display = "block";
             }
         }   
     },
     mounted() {
-        this.acc = document.getElementsByClassName("accordian");
-        console.log(this.acc)
-        this.panel = this.acc[0].nextElementSibling;
-        
+        // this.acc = document.getElementsByClassName("accordian");
+        // console.log(this.acc)        
     }
 };
 </script>
@@ -56,8 +53,7 @@ export default {
   transition: 0.5s;
 }
 
-.active,
-.accordian:hover {
+.active, .accordian:hover {
   background-color: darkslategrey;
 }
 
