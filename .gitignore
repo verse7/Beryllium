@@ -41,4 +41,6 @@ Thumbs.db
 back/creds.json
 .idea
 .vscode
+*.pyc
+back/mentorsys/__pycache__
 
