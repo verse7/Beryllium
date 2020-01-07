@@ -39,6 +39,8 @@ Thumbs.db
 # CUSTOM #
 ######################
 back/creds.json
+back/.idea
+back/.vscode
 .idea
 .vscode
 *.pyc
