@@ -39,10 +39,10 @@ Thumbs.db
 # CUSTOM #
 ######################
 back/creds.json
-back/.idea
-back/.vscode
-.idea
-.vscode
+back/.idea/
+back/.vscode/
+.idea/
+.vscode/
 *.pyc
-back/mentorsys/__pycache__
+back/mentorsys/__pycache__/
 
