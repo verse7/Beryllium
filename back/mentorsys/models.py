@@ -45,10 +45,10 @@ class Mentor(db.Model):
     lname = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120))
     telnum = db.Column(db.String(20))
-    contract = db.Column(db.String(15))
-    current = db.Column(db.Integer, default=0)
-    met_max = db.Column(db.Integer, default=1)
-    mentees = db.relationship('Mentee', backref='mentor')
+    contract = db.Column(db.String(15)) # status of mentor contract eg.(APPROVED, PENDING)
+    current = db.Column(db.Integer, default=0)  # current number of mentees assigned
+    met_max = db.Column(db.Integer, default=1)  # maximum number of mentees that can be assigned
+    mentees = db.relationship('Mentee', backref='mentor')   # mentees assigned
 
     def __init__(self, fname, lname, email, telnum, contract, current, met_max):
         self.fname = fname

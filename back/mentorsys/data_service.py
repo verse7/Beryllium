@@ -4,6 +4,10 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
 
+""" 
+Code used to pull data from online google sheet to intialize test database
+This data is similar to the actual data
+"""
 scope = [
     "https://spreadsheets.google.com/feeds",
     'https://www.googleapis.com/auth/spreadsheets',
@@ -72,6 +76,13 @@ def fetch2db():
         db.session.add(mentee)
     
     db.session.commit()
+
+
+""" def reset():
+    db.drop_all()
+    db.create_all()
+    odb =
+    db.session. """
 
 
 # fetch()

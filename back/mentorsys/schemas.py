@@ -1,3 +1,4 @@
+# this file is no longer used
 # Marshmallow Schemas for models
 from mentorsys import ma
 
