@@ -45,7 +45,3 @@ Some practices of using flask came from this tutorial series [here](https://hack
 
 > NOTE: the creation of a `.env` file is necessary for the app configuration. An example (`.env.example`) is included for guidance. See [here](https://hackersandslackers.com/configure-flask-applications) also for further explanations.
 
-
-## User Interface (UI)
-The very little done right now uses the VueJs Framework. The framework of choice will most likely change therefore no instructions right now.
-
