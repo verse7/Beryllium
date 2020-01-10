@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "beryllium-254323",
+  "private_key_id": "8c32390fd3f4888a862c951be5a1f92984a7ff6c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCoJ7IhlU08cR5/\nnQgJOkSCoUx5QuFqgPeOKlXU/apQOvYtuRxrOua+v2ZcPLCVqBumN+sVKfKTCpf4\nRXb3Zn5vpSY/LqNm/wydbmwUc8iG8NgVFenLPCB+8j29qV8/S55ipnA/uQOxSS7w\nnJJdihJSvgVIGZLvLt7nzDxqwEtUF2sJuNr8ZBj73YLDFajaGJhOc6Hjgc0u2c/y\noRoU27dO2jdDmwfMd5g9furEtd+Pn4GswTuhdx93QRGn8FYR1KgknXNaObrsB9vg\nF2O/P5Ho5ziuJwZ9FcWAtWbmTSkHL+69Pyf40WWAWsFMO8ObRb/spCJIzUI79vTd\nTi8WHv/VAgMBAAECggEAC5BnTK3y2NRCr64B7niGW6FyG+jAjc1+uNUqf/JN8ySK\n54wSa0FquvV4uaEm17Pu6thvn036M6iH2PgV/V+cFFt8LN4tOJkTqgP9BM8NnFIV\n2iVepa5l4bURD+kE9tphcxFVKNy1Z0zMIJnz6uDi77PHszSnCTHk/HXsNb8xrv+s\nkSlWjq8BcQ2umE2VSlC3BGbXJkupncYnQJOiy/XfKPwYxfBc0ykj6xM14djMUB9i\n4fioWF8ZyP2kSO+31b0q2nY/opIiDWJVJ2TtVwdTzXaZYrkYNayq4wb66bToWv6r\nT4NdL+60rX2r1MFxel8Qd0RiriWGK2fSIdfjeEVThQKBgQDoaGRN+5Am0wvJaom7\nqxEiH03CkPsepJyYokrKcQ+LugNDM7WdY2orBykPWwlTrb7HvRGNNxHESCAhSNKD\nBhb9afU8e+3+cPhNT3c3hbvWZed4xDTiiPlhwS9x/8d+NdJT3sL95LmkZ4pGLG14\nkLXteOG25dOw2evU74NTSGBn8wKBgQC5OY+jqlh0V8lH2/kQPENslAilQ7Y6ldbq\ntIomFbORmnLFXrpCu96eVR0sLg02O0yIjmm966YLCIlvr300mmx3HlYTQ8E4ngct\nOW6oZKUkCV3DXEIQB5m3bsKuB/zjVwQR6aLrWpacrTbfwCNd92Oj+HQ1SERbMwNe\nism0bo7zFwKBgEictRoYSwWWUsxvWPEllYjPtv/fRFZin/qgWjW99Vl2mKZadZfj\nA7zF0/JUQym90ymczOsOFaL51fAQTJVbRbuPa2umXMluimW9OkZCpllqJVP6GXvd\nx+ze6u/3NmEcd8Z0hv/Egqv3HaCnKNzOecjkR8FZNTbAH4q7+o/+wQA5AoGAdmI6\n0zFJ7bo59Iq8qkrKETigOfiIHPOt9D7F2UefiJ09Y7aCt6pZw7rEtXsNiK7n4JOd\nM/zMGFsxdEemb5uPXabu/sscUPJ3xcjiWBBTmC/AVN+/fX1OGvZYyWBjmm4ANO6t\n6VzxzFvNKb8lG6bFcYSXyYJR5jQ5oBB2kLLk/KsCgYEA1F8cCZ6+QoWNpBFh/hqh\nTS3jWYtP8Wsdh5SmiwJv+1f68zxdOxVLgVJbJuxJiDPGHyGPFTMGpInfRSi5chVP\nq9bI45uyeY7rfSYpMfh+I7mVIOT4niW3craGzOl6VTNkk/xUOdcI0MGYN+/aCz4S\nAkn/wFTfH6ZtEq4ewFn4RMA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rowan-212@beryllium-254323.iam.gserviceaccount.com",
+  "client_id": "116444662213907108631",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rowan-212%40beryllium-254323.iam.gserviceaccount.com"
+}

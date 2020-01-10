@@ -6,7 +6,6 @@
 *.exe
 *.o
 *.so
-*.pyc
 
 # Packages #
 ############
@@ -37,20 +36,7 @@
 ehthumbs.db
 Thumbs.db
 
-# Sensitive files #
+# CUSTOM #
 ######################
 back/creds.json
-.env
-
-# Scripts #
-*.sh
-
-# OTHER #
-######################
-back/.idea/
-back/.vscode/
-.idea/
-.vscode/
-back/mentorsys/__pycache__/
-server.egg-info/
-
+back-falcon

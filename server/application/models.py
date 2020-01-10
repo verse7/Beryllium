@@ -1,20 +1,8 @@
 from sqlalchemy.ext.declarative import declarative_base
-from mentorsys import db, ma
-""" 
-Base = db.make_declarative_base(db.Model)
+from . import db, ma
 
-
-# Base Schema - adds Schema to Model for JSON serialization (using Marshmallow)
-def add_schema(cls):
-    class Schema(ma.ModelSchema):
-        class Meta:
-            model = cls
-    cls.Schema = Schema
-    return cls
- """
-
-# @add_schema
 class Mentee(db.Model):
+    """ Mentee table model """
     # __tablename__ = "mentee"
     id = db.Column(db.Integer, primary_key=True)
     fname = db.Column(db.String(20), nullable=False)
@@ -36,19 +24,18 @@ class Mentee(db.Model):
         return f"Mentee{self.id} - {self.fname} {self.lname}\n{self.email}\n" \
                f"{self.telnum}\n{self.contract}\n{self.mentor_id}"
 
-# Mentor Model
-# @add_schema
 class Mentor(db.Model):
+    """ Mentor table model """
     # __tablename__ = "mentor"
     id = db.Column(db.Integer, primary_key=True)
     fname = db.Column(db.String(20), nullable=False)
     lname = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120))
     telnum = db.Column(db.String(20))
-    contract = db.Column(db.String(15))
-    current = db.Column(db.Integer, default=0)
-    met_max = db.Column(db.Integer, default=1)
-    mentees = db.relationship('Mentee', backref='mentor')
+    contract = db.Column(db.String(15)) # status of mentor contract eg.(APPROVED, PENDING)
+    current = db.Column(db.Integer, default=0)  # current number of mentees assigned
+    met_max = db.Column(db.Integer, default=1)  # maximum number of mentees that can be assigned
+    mentees = db.relationship('Mentee', backref='mentor')   # mentees assigned
 
     def __init__(self, fname, lname, email, telnum, contract, current, met_max):
         self.fname = fname
@@ -78,11 +65,11 @@ class MentorSchema(ma.ModelSchema):
         fiels = ('id', 'fname', 'lname', 'email', 'telnum', 'contract', 'current', 'met_max')
 
 
-mentee_schema = MenteeSchema()
-mentees_schema = MenteeSchema(many=True)
-mentor_schema = MentorSchema()
-mentors_schema = MentorSchema(many=True)
+mentee_schema = MenteeSchema()  # single mentee schema
+mentor_schema = MentorSchema()  # single mentor schema
+mentees_schema = MenteeSchema(many=True)    # multiple mentee schema
+mentors_schema = MentorSchema(many=True)    # multiple mentor schema
 
 # DB DESTROY AND CREATE
-db.drop_all()
-db.create_all()
+# db.drop_all()
+# db.create_all()
